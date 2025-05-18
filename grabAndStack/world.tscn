@@ -1,0 +1,422 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqlw4tqrviw7r"]
+
+[ext_resource type="PackedScene" uid="uid://bwwfbkfsqutsn" path="res://rightSide/cursor_grabber.tscn" id="3_3acxw"]
+[ext_resource type="PackedScene" uid="uid://xoirpnyxbn4f" path="res://rightSide/block_spawner.tscn" id="4_y4aw4"]
+[ext_resource type="Script" path="res://left_side.gd" id="5_6c2s3"]
+[ext_resource type="PackedScene" uid="uid://4j2qbs4pd51o" path="res://leftSide/claw_launcher.tscn" id="5_8452c"]
+[ext_resource type="Script" path="res://height_tracker.gd" id="5_hxuhw"]
+[ext_resource type="Script" path="res://rich_text_label_2.gd" id="5_p2vis"]
+[ext_resource type="Script" path="res://grabCollections.gd" id="6_nkhoc"]
+[ext_resource type="PackedScene" uid="uid://dh0y62pkfv01j" path="res://floors/floor.tscn" id="7_qexcf"]
+[ext_resource type="Script" path="res://LeftSideBlockCheck.gd" id="8_baefp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpn3g"]
+size = Vector2(80, 3138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdoe"]
+size = Vector2(200, 3514)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68gmb"]
+size = Vector2(800, 1920)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o62bm"]
+size = Vector2(1898, 2161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vm6h"]
+size = Vector2(1920, 800)
+
+[node name="World" type="Node2D"]
+
+[node name="RightSide" type="Node2D" parent="."]
+
+[node name="CursorGrabber" parent="RightSide" instance=ExtResource("3_3acxw")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="RightSide"]
+position = Vector2(1920, 1080)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/StaticBody2D2"]
+position = Vector2(0, -316)
+shape = SubResource("RectangleShape2D_jpn3g")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="RightSide"]
+position = Vector2(3840, 1080)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/StaticBody2D3"]
+position = Vector2(100, -327.5)
+shape = SubResource("RectangleShape2D_dvdoe")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="RightSide"]
+position = Vector2(2880, -400)
+rotation = -1.57079
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_68gmb")
+
+[node name="BlockSpawner" parent="RightSide" groups=["rightBlockSpawner"] instance=ExtResource("4_y4aw4")]
+position = Vector2(2880, 288)
+blockGroup = "stackBlocks"
+
+[node name="HeightTracker" type="Node2D" parent="RightSide"]
+position = Vector2(1920, 0)
+script = ExtResource("5_hxuhw")
+
+[node name="currentTracker" type="HBoxContainer" parent="RightSide/HeightTracker"]
+offset_top = 2160.0
+offset_right = 1925.0
+offset_bottom = 2185.0
+
+[node name="ColorRect" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect4" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect5" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect6" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect7" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect8" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect9" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect10" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect11" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect12" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect13" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect14" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect15" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect16" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect17" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect18" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect19" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect20" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect21" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect22" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect23" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect24" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect25" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect26" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect27" type="ColorRect" parent="RightSide/HeightTracker/currentTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bestTracker" type="HBoxContainer" parent="RightSide/HeightTracker"]
+modulate = Color(0.917647, 0.878431, 0.678431, 1)
+offset_top = 2160.0
+offset_right = 1925.0
+offset_bottom = 2185.0
+
+[node name="ColorRect" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect4" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect5" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect6" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect7" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect8" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect9" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect10" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect11" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect12" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect13" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect14" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect15" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect16" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect17" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect18" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect19" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect20" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect21" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect22" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect23" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect24" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect25" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect26" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect27" type="ColorRect" parent="RightSide/HeightTracker/bestTracker"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Floor" parent="RightSide" instance=ExtResource("7_qexcf")]
+position = Vector2(2900, 2200)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="RightSide"]
+offset_left = 2257.0
+offset_top = 385.0
+offset_right = 3822.0
+offset_bottom = 1052.0
+theme_override_colors/default_color = Color(0.917647, 0.878431, 0.678431, 0.443137)
+theme_override_font_sizes/normal_font_size = 500
+text = "00:00"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_p2vis")
+
+[node name="Timer" type="Timer" parent="RightSide"]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="RightSide" type="ColorRect" parent="UI"]
+z_index = -1
+offset_left = 1920.0
+offset_right = 3840.0
+offset_bottom = 2160.0
+color = Color(0.494118, 0.568627, 0.407843, 1)
+
+[node name="LeftSide" type="ColorRect" parent="UI"]
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 2160.0
+color = Color(0.615686, 0.227451, 0.207843, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI"]
+z_index = 5
+offset_left = 1880.0
+offset_right = 1960.0
+offset_bottom = 2160.0
+color = Color(0.917647, 0.878431, 0.678431, 1)
+
+[node name="LeftSide" type="Node2D" parent="."]
+script = ExtResource("5_6c2s3")
+
+[node name="Area2D" type="Area2D" parent="LeftSide"]
+script = ExtResource("8_baefp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Area2D"]
+position = Vector2(953, 1079.5)
+shape = SubResource("RectangleShape2D_o62bm")
+
+[node name="Timer" type="Timer" parent="LeftSide/Area2D"]
+wait_time = 25.0
+autostart = true
+
+[node name="ClawLauncher" parent="LeftSide" instance=ExtResource("5_8452c")]
+position = Vector2(960, 0)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="LeftSide"]
+position = Vector2(-200, 1080)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/StaticBody2D5"]
+position = Vector2(100, -121)
+shape = SubResource("RectangleShape2D_dvdoe")
+
+[node name="BlockSpawner2" parent="LeftSide" groups=["leftBlockSpawner"] instance=ExtResource("4_y4aw4")]
+position = Vector2(956, 288)
+
+[node name="Collections" type="Area2D" parent="LeftSide"]
+position = Vector2(960, -400)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("6_nkhoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Collections"]
+shape = SubResource("RectangleShape2D_5vm6h")
+
+[node name="Timer" type="Timer" parent="LeftSide/Collections"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Floor" parent="LeftSide" instance=ExtResource("7_qexcf")]
+position = Vector2(963, 2200)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LeftSide"]
+offset_left = 311.0
+offset_top = 385.0
+offset_right = 1876.0
+offset_bottom = 1052.0
+theme_override_colors/default_color = Color(0.917647, 0.878431, 0.678431, 0.443137)
+theme_override_font_sizes/normal_font_size = 500
+text = "00:00"
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="timeout" from="LeftSide/Area2D/Timer" to="LeftSide" method="_on_timer_timeout"]
+[connection signal="body_entered" from="LeftSide/Collections" to="LeftSide/Collections" method="_on_body_entered"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh0y62pkfv01j"]
+
+[ext_resource type="Script" path="res://floors/floor.gd" id="1_3grik"]
+
+[node name="Floor" type="StaticBody2D"]
+script = ExtResource("1_3grik")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://4j2qbs4pd51o"]
+
+[ext_resource type="Script" path="res://leftSide/claw_launcher.gd" id="1_wch2h"]
+[ext_resource type="PackedScene" uid="uid://dqs50e0gtkmsp" path="res://leftSide/claw.tscn" id="2_3qqw5"]
+
+[node name="ClawLauncher" type="Node2D"]
+script = ExtResource("1_wch2h")
+claw_scene = ExtResource("2_3qqw5")
+
+[node name="RotationOrigin" type="Node2D" parent="."]
+
+[node name="Polygon2D2" type="Polygon2D" parent="RotationOrigin"]
+scale = Vector2(5, 5)
+color = Color(0.917647, 0.878431, 0.678431, 1)
+offset = Vector2(0, 35)
+polygon = PackedVector2Array(-9.2, 5.6, -0.4, 17.4, 0.6, 17.4, 10, 6.4, 9, 3.6, 4.2, 3.8, 0.6, -50, -1.4, -50, -4.6, 3.8, -8.2, 3.8)
+
+[node name="Marker2D" type="Marker2D" parent="RotationOrigin"]
+position = Vector2(0, 256)

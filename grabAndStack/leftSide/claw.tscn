@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqs50e0gtkmsp"]
+
+[ext_resource type="Script" path="res://leftSide/claw.gd" id="1_csren"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x7n7w"]
+bounce = 0.6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0dc22"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkkud"]
+radius = 60.0
+
+[node name="Claw" type="RigidBody2D" groups=["claw"]]
+physics_material_override = SubResource("PhysicsMaterial_x7n7w")
+script = ExtResource("1_csren")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0dc22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xkkud")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-3, 13)
+color = Color(0.494118, 0.568627, 0.407843, 1)
+polygon = PackedVector2Array(-32, 63, -48, 53, -74, 19, -82, -13, -81, -22, -72, -26, -58, -6, -46, 7, -39, -6, -38, -31, -39, -62, -37, -89, -29, -94, -23, -95, -15, -90, -14, -65, -8, -36, 9, -33, 11, -68, 12, -87, 20, -91, 28, -89, 36, -67, 34, -39, 38, -25, 47, -24, 56, -40, 59, -57, 71, -55, 73, -41, 73, -22, 69, 1, 57, 48, 47, 59, 41, 71, 17, 79, -5, 79, -24, 73)
+
+[node name="TimeTillGrab" type="Timer" parent="."]
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -24.0
+offset_top = -37.0
+offset_right = 133.0
+offset_bottom = 124.0
+theme_override_colors/default_color = Color(0.917647, 0.878431, 0.678431, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "5"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimeTillGrab" to="." method="_on_time_till_grab_timeout"]
