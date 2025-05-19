@@ -34,7 +34,7 @@ func _ready():
 
 
 func update_scale(claw_count: int):
-	var scale_factor = max(0.2, 1.0 - (claw_count - 1) * 0.5)
+	var scale_factor = max(0.2, 1.0 - (claw_count - 1) * 0.1)
 	var base_radius = 50.0
 	var area2d_shape = CircleShape2D.new()
 	var rigidbody_shape = CircleShape2D.new()

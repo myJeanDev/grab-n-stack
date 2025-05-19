@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://leftSide/claw.gd" id="1_csren"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x7n7w"]
-bounce = 0.6
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0dc22"]
 radius = 100.0

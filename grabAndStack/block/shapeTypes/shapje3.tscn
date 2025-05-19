@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://prnsbgm1thbw"]
+
+[node name="Polygon2D" type="Polygon2D"]
+position = Vector2(16, -16)
+polygon = PackedVector2Array(55, -35, 115, -38, 241, -28, 196, 23, 82, 24, -47, 26, -171, 30, -222, -36, -64, -36, -34, -37, -80, -185, -55, -192, -76, -258, -53, -258, -34, -239, 2, -229, 38, -237, 50, -256, 73, -254, 68, -191, 89, -187)

@@ -372,7 +372,7 @@ position = Vector2(953, 1079.5)
 shape = SubResource("RectangleShape2D_o62bm")
 
 [node name="Timer" type="Timer" parent="LeftSide/Area2D"]
-wait_time = 25.0
+wait_time = 16.0
 autostart = true
 
 [node name="ClawLauncher" parent="LeftSide" instance=ExtResource("5_8452c")]

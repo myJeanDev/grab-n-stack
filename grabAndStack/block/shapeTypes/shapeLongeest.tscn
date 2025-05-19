@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://blltepi0ie5wk"]
 
 [node name="Polygon2D" type="Polygon2D"]
-polygon = PackedVector2Array(-25, -69, -9, -91, 35, -65, 12, -10, 34, 53, 38, 106, -17, 116, -35, -11)
+polygon = PackedVector2Array(-25, -69, -9, -91, 35, -65, 12, -10, 72, 42, 68, 123, -69, 141, -35, -11)

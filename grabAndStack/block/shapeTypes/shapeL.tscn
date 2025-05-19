@@ -2,4 +2,4 @@
 
 [node name="Polygon2D" type="Polygon2D"]
 position = Vector2(-1, 1)
-polygon = PackedVector2Array(131, -147, 140, -45, 50, -20, 73, 143, -48, 162, -110, -2, -62, -72, 4, -110)
+polygon = PackedVector2Array(151, -151, 189, -50, 50, -20, 34, 249, -68, 253, -110, -2, 0, -46, 4, -110)
