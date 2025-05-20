@@ -1,11 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://xoirpnyxbn4f"]
+[gd_scene load_steps=29 format=3 uid="uid://xoirpnyxbn4f"]
 
 [ext_resource type="Script" path="res://rightSide/block_spawner.gd" id="1_tchch"]
 [ext_resource type="PackedScene" uid="uid://b7y3mi41w5c8s" path="res://block/block.tscn" id="2_8sf2m"]
+[ext_resource type="PackedScene" uid="uid://bit85wyywhvlr" path="res://block/shapeTypes/shape0.tscn" id="3_k38a7"]
+[ext_resource type="PackedScene" uid="uid://ba0q0w4v5rcwp" path="res://block/shapeTypes/shape1.tscn" id="4_bg30q"]
+[ext_resource type="PackedScene" uid="uid://e4phcrbenvdp" path="res://block/shapeTypes/shape2.tscn" id="5_78f2g"]
+[ext_resource type="PackedScene" uid="uid://j6lqv46q3kuu" path="res://block/shapeTypes/shape3.tscn" id="6_nx0n6"]
+[ext_resource type="PackedScene" uid="uid://ckvcvy2tg1f3h" path="res://block/shapeTypes/shape4.tscn" id="7_m21vu"]
+[ext_resource type="PackedScene" uid="uid://bhpoetqcujx3q" path="res://block/shapeTypes/shape5.tscn" id="8_xqjpy"]
+[ext_resource type="PackedScene" uid="uid://y86oi5qny2fm" path="res://block/shapeTypes/shape6.tscn" id="9_onbs3"]
+[ext_resource type="PackedScene" uid="uid://c1sgsx2o8n4gj" path="res://block/shapeTypes/shape7.tscn" id="10_rld0y"]
+[ext_resource type="PackedScene" uid="uid://bfr4oa0rb88gt" path="res://block/shapeTypes/shapeCHRIS.tscn" id="11_bc1pg"]
+[ext_resource type="PackedScene" uid="uid://cbbvktgh47llb" path="res://block/shapeTypes/shapeCoffin.tscn" id="12_3r2hd"]
+[ext_resource type="PackedScene" uid="uid://oykp1om5pv3c" path="res://block/shapeTypes/shapeHook.tscn" id="13_ujlcu"]
+[ext_resource type="PackedScene" uid="uid://dngupvphxay5o" path="res://block/shapeTypes/shapeIVY.tscn" id="14_axf8h"]
+[ext_resource type="PackedScene" uid="uid://c7rtwoeepy7sn" path="res://block/shapeTypes/shapeJay3.tscn" id="15_imt77"]
+[ext_resource type="PackedScene" uid="uid://ckqyarr77v4bi" path="res://block/shapeTypes/shapeJay.tscn" id="16_t8kvp"]
+[ext_resource type="PackedScene" uid="uid://cajgv2ac71x2t" path="res://block/shapeTypes/shapeJOSH.tscn" id="17_d27wf"]
+[ext_resource type="PackedScene" uid="uid://crlywlfobub0t" path="res://block/shapeTypes/shapeL.tscn" id="18_12vjc"]
+[ext_resource type="PackedScene" uid="uid://chtl1awyvcbke" path="res://block/shapeTypes/shapeLong.tscn" id="19_atwn2"]
+[ext_resource type="PackedScene" uid="uid://blltepi0ie5wk" path="res://block/shapeTypes/shapeLongeest.tscn" id="20_vsq54"]
+[ext_resource type="PackedScene" uid="uid://47kj55hmpxi3" path="res://block/shapeTypes/shapeLongEH.tscn" id="21_reg0p"]
+[ext_resource type="PackedScene" uid="uid://dwk5bnk1fnwii" path="res://block/shapeTypes/shapeLongEHer.tscn" id="22_goobj"]
+[ext_resource type="PackedScene" uid="uid://dn6k6vot515aa" path="res://block/shapeTypes/shapeLonger.tscn" id="23_dh4qk"]
+[ext_resource type="PackedScene" uid="uid://c5xlr8wonjn3g" path="res://block/shapeTypes/shapeNOTBALLS.tscn" id="24_0sqgp"]
+[ext_resource type="PackedScene" uid="uid://dwg774kcjr3s4" path="res://block/shapeTypes/shapeSquare.tscn" id="25_6s1xv"]
+[ext_resource type="PackedScene" uid="uid://4f5cc2xp3ulc" path="res://block/shapeTypes/shapeT.tscn" id="26_lwa3d"]
+[ext_resource type="PackedScene" uid="uid://b3qdkic1rrkvv" path="res://block/shapeTypes/shapeViNNYT.tscn" id="27_ho82i"]
+[ext_resource type="PackedScene" uid="uid://prnsbgm1thbw" path="res://block/shapeTypes/shapje3.tscn" id="28_lkq3w"]
 
 [node name="BlockSpawner" type="Node2D"]
 script = ExtResource("1_tchch")
 block_scene = ExtResource("2_8sf2m")
+blockShapes = Array[PackedScene]([ExtResource("3_k38a7"), ExtResource("4_bg30q"), ExtResource("5_78f2g"), ExtResource("6_nx0n6"), ExtResource("7_m21vu"), ExtResource("8_xqjpy"), ExtResource("9_onbs3"), ExtResource("10_rld0y"), ExtResource("11_bc1pg"), ExtResource("12_3r2hd"), ExtResource("13_ujlcu"), ExtResource("14_axf8h"), ExtResource("15_imt77"), ExtResource("16_t8kvp"), ExtResource("17_d27wf"), ExtResource("18_12vjc"), ExtResource("19_atwn2"), ExtResource("20_vsq54"), ExtResource("21_reg0p"), ExtResource("22_goobj"), ExtResource("23_dh4qk"), ExtResource("24_0sqgp"), ExtResource("25_6s1xv"), ExtResource("26_lwa3d"), ExtResource("27_ho82i"), ExtResource("28_lkq3w")])
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

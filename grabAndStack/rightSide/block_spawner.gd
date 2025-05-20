@@ -1,14 +1,12 @@
 extends Node2D
 @export var blockGroup: String = "block"
 @export var block_scene: PackedScene
-@export var shapes_path: String = "res://block/shapeTypes/"
 @export var starting_amount: int = 3
-var blockShapes: Array[String] = []
+@export var blockShapes: Array[PackedScene] = []
 var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	blockShapes = dir_contents(shapes_path)
 	spawn_some_blocks()
 
 func spawn_some_blocks():
@@ -33,7 +31,7 @@ func spawn_block(position: Vector2) -> RigidBody2D:
 	
 	# Choose a random shape using our seeded RNG
 	var shape_index = rng.randi() % blockShapes.size()
-	var shape = load(blockShapes[shape_index]).instantiate()
+	var shape = blockShapes[shape_index].instantiate()
 	
 	# Setup the block with this shape
 	block.setup_shape(shape)
@@ -54,26 +52,12 @@ func spawn_block_with_shape(position: Vector2, shape_index: int) -> RigidBody2D:
 	var spawn_position = Vector2(position.x + random_x_offset, position.y)
 	block.position = spawn_position
 	
-	var shape = load(blockShapes[shape_index]).instantiate()
+	var shape = blockShapes[shape_index].instantiate()
 	block.setup_shape(shape)
 	
 	add_child(block)
 	return block
 
-func dir_contents(path) -> Array[String]:
-	var shapes: Array[String] = []
-	var dir = DirAccess.open(path)
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if !dir.current_is_dir():
-				shapes.append(path + file_name)
-				print("Found FILE: " + file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
-	return shapes
 
 func spawn_block_with_passed_shape(shape: Polygon2D) -> RigidBody2D:
 	shape.modulate = Color(1.0,1.0,1.0)

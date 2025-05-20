@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh0y62pkfv01j"]
+[gd_scene load_steps=13 format=3 uid="uid://dh0y62pkfv01j"]
 
 [ext_resource type="Script" path="res://floors/floor.gd" id="1_3grik"]
+[ext_resource type="PackedScene" uid="uid://7fnbwxnydfg4" path="res://floors/floorTypes/floorType1.tscn" id="2_slm1u"]
+[ext_resource type="PackedScene" uid="uid://dfambefvdsi8j" path="res://floors/floorTypes/floorType2.tscn" id="3_pp4yr"]
+[ext_resource type="PackedScene" uid="uid://cqgn5cn5ngx25" path="res://floors/floorTypes/floorType3.tscn" id="4_pqsn5"]
+[ext_resource type="PackedScene" uid="uid://cog3f4u5r8coi" path="res://floors/floorTypes/floorType4.tscn" id="5_k605f"]
+[ext_resource type="PackedScene" uid="uid://dm6eoc6d24w03" path="res://floors/floorTypes/floorType5.tscn" id="6_nfw6u"]
+[ext_resource type="PackedScene" uid="uid://b6v4od2jb5pqg" path="res://floors/floorTypes/floorType6.tscn" id="7_s4fus"]
+[ext_resource type="PackedScene" uid="uid://c14rvkjq53emq" path="res://floors/floorTypes/floorType7.tscn" id="8_dui2m"]
+[ext_resource type="PackedScene" uid="uid://bhmcj8qpfts07" path="res://floors/floorTypes/floorType8.tscn" id="9_n3ppp"]
+[ext_resource type="PackedScene" uid="uid://bc26jt1asrglx" path="res://floors/floorTypes/floorType9.tscn" id="10_1rm46"]
+[ext_resource type="PackedScene" uid="uid://bf76p2quwp41b" path="res://floors/floorTypes/floorType10.tscn" id="11_mm3h5"]
+[ext_resource type="PackedScene" uid="uid://le78fg0b4grb" path="res://floors/floorTypes/floorType11.tscn" id="12_i2dc1"]
 
 [node name="Floor" type="StaticBody2D"]
 script = ExtResource("1_3grik")
+floor_shapes = Array[PackedScene]([ExtResource("2_slm1u"), ExtResource("3_pp4yr"), ExtResource("4_pqsn5"), ExtResource("5_k605f"), ExtResource("6_nfw6u"), ExtResource("7_s4fus"), ExtResource("8_dui2m"), ExtResource("9_n3ppp"), ExtResource("10_1rm46"), ExtResource("11_mm3h5"), ExtResource("12_i2dc1")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
