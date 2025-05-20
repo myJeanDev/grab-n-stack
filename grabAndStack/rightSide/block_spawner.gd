@@ -1,13 +1,44 @@
 extends Node2D
+
+var blockShapes: Array[PackedScene] = [
+	preload("res://block/shapeTypes/shape0.tscn"),
+	preload("res://block/shapeTypes/shape1.tscn"),
+	preload("res://block/shapeTypes/shape2.tscn"),
+	preload("res://block/shapeTypes/shape3.tscn"),
+	preload("res://block/shapeTypes/shape4.tscn"),
+	preload("res://block/shapeTypes/shape5.tscn"),
+	preload("res://block/shapeTypes/shape6.tscn"),
+	preload("res://block/shapeTypes/shape7.tscn"),
+	preload("res://block/shapeTypes/shapeCHRIS.tscn"),
+	preload("res://block/shapeTypes/shapeCoffin.tscn"),
+	preload("res://block/shapeTypes/shapeHook.tscn"),
+	preload("res://block/shapeTypes/shapeIVY.tscn"),
+	preload("res://block/shapeTypes/shapeJay3.tscn"),
+	preload("res://block/shapeTypes/shapeJay.tscn"),
+	preload("res://block/shapeTypes/shapeJOSH.tscn"),
+	preload("res://block/shapeTypes/shapeL.tscn"),
+	preload("res://block/shapeTypes/shapeLong.tscn"),
+	preload("res://block/shapeTypes/shapeLongeest.tscn"),
+	preload("res://block/shapeTypes/shapeLongEH.tscn"),
+	preload("res://block/shapeTypes/shapeLongEHer.tscn"),
+	preload("res://block/shapeTypes/shapeLonger.tscn"),
+	preload("res://block/shapeTypes/shapeNOTBALLS.tscn"),
+	preload("res://block/shapeTypes/shapeSquare.tscn"),
+	preload("res://block/shapeTypes/shapeT.tscn"),
+	preload("res://block/shapeTypes/shapeViNNYT.tscn"),
+	preload("res://block/shapeTypes/shapje3.tscn")
+]
+
 @export var blockGroup: String = "block"
-@export var block_scene: PackedScene
-@export var starting_amount: int = 3
-@export var blockShapes: Array[PackedScene] = []
+var block_scene: PackedScene = preload("res://block/block.tscn")
+var starting_amount: int = 3
 var rng = RandomNumberGenerator.new()
+
 
 func _ready():
 	rng.randomize()
 	spawn_some_blocks()
+
 
 func spawn_some_blocks():
 	for i in starting_amount:
@@ -15,10 +46,12 @@ func spawn_some_blocks():
 		await $Timer.timeout
 		spawn_block(position)
 
+
 # Set a specific seed for deterministic randomness
 func set_seed(seed_value: int):
 	rng.seed = seed_value
-	
+
+
 # Spawn a block at the specified position with random x offset
 func spawn_block(position: Vector2) -> RigidBody2D:
 	var block = block_scene.instantiate()

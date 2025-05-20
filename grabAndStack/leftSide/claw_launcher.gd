@@ -1,12 +1,13 @@
 extends Node2D
 
-@export var claw_scene: PackedScene
+var claw_scene: PackedScene = preload("res://leftSide/claw.tscn")
 var rotationSpeed = 1
 var can_launch = true
 var launch_power = 0.0
 var POWER_INCREASE = 2000.0
 const MAX_POWER = 5000.0
 var current_claw: RigidBody2D = null
+
 
 func _ready() -> void:
 	print("ClawLauncher Ready: ")

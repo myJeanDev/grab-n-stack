@@ -18,3 +18,8 @@ func _on_timer_timeout() -> void:
 
 func _process(delta: float) -> void:
 	$RichTextLabel.text = str($Area2D/Timer.time_left)
+
+
+
+func _on_end_game_timer_timeout():
+	$Area2D/Timer.stop()

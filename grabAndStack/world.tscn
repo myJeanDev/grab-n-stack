@@ -27,6 +27,9 @@ size = Vector2(1920, 800)
 
 [node name="World" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [node name="RightSide" type="Node2D" parent="."]
 
 [node name="CursorGrabber" parent="RightSide" instance=ExtResource("3_3acxw")]
@@ -60,7 +63,6 @@ shape = SubResource("RectangleShape2D_68gmb")
 
 [node name="BlockSpawner" parent="RightSide" groups=["rightBlockSpawner"] instance=ExtResource("4_y4aw4")]
 position = Vector2(2880, 288)
-blockGroup = "stackBlocks"
 
 [node name="HeightTracker" type="Node2D" parent="RightSide"]
 position = Vector2(1920, 0)
@@ -334,7 +336,7 @@ scroll_active = false
 autowrap_mode = 0
 script = ExtResource("5_p2vis")
 
-[node name="Timer" type="Timer" parent="RightSide"]
+[node name="EndGameTimer" type="Timer" parent="RightSide"]
 wait_time = 120.0
 one_shot = true
 autostart = true
@@ -346,12 +348,14 @@ z_index = -1
 offset_left = 1920.0
 offset_right = 3840.0
 offset_bottom = 2160.0
+mouse_filter = 2
 color = Color(0.494118, 0.568627, 0.407843, 1)
 
 [node name="LeftSide" type="ColorRect" parent="UI"]
 z_index = -1
 offset_right = 1920.0
 offset_bottom = 2160.0
+mouse_filter = 2
 color = Color(0.615686, 0.227451, 0.207843, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="UI"]
@@ -359,6 +363,7 @@ z_index = 5
 offset_left = 1880.0
 offset_right = 1960.0
 offset_bottom = 2160.0
+mouse_filter = 2
 color = Color(0.917647, 0.878431, 0.678431, 1)
 
 [node name="LeftSide" type="Node2D" parent="."]
@@ -418,5 +423,7 @@ text = "00:00"
 scroll_active = false
 autowrap_mode = 0
 
+[connection signal="timeout" from="RightSide/EndGameTimer" to="RightSide/CursorGrabber" method="_on_end_game_timer_timeout"]
+[connection signal="timeout" from="RightSide/EndGameTimer" to="LeftSide" method="_on_end_game_timer_timeout"]
 [connection signal="timeout" from="LeftSide/Area2D/Timer" to="LeftSide" method="_on_timer_timeout"]
 [connection signal="body_entered" from="LeftSide/Collections" to="LeftSide/Collections" method="_on_body_entered"]

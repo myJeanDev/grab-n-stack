@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://4j2qbs4pd51o"]
+[gd_scene load_steps=2 format=3 uid="uid://4j2qbs4pd51o"]
 
 [ext_resource type="Script" path="res://leftSide/claw_launcher.gd" id="1_wch2h"]
-[ext_resource type="PackedScene" uid="uid://dqs50e0gtkmsp" path="res://leftSide/claw.tscn" id="2_3qqw5"]
 
 [node name="ClawLauncher" type="Node2D"]
 script = ExtResource("1_wch2h")
-claw_scene = ExtResource("2_3qqw5")
 
 [node name="RotationOrigin" type="Node2D" parent="."]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cptj5uegqr3k"]
+
+[ext_resource type="Texture2D" uid="uid://j5ju38vvqcgw" path="res://icon.svg" id="1_2whm3"]
+[ext_resource type="PackedScene" uid="uid://dh0y62pkfv01j" path="res://floors/floor.tscn" id="2_pdsjt"]
+
+[node name="simpleroot" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1476, 691)
+texture = ExtResource("1_2whm3")
+
+[node name="Floor" parent="." instance=ExtResource("2_pdsjt")]
+position = Vector2(1492, 1056)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(587, 593, 583, 377, 859, 377, 1175, 345, 1175, 605, 1159, 1037, 971, 1185, 571, 1185, 519, 881, 791, 881, 963, 809, 943, 665, 751, 645)

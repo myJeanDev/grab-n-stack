@@ -2,6 +2,7 @@ extends Node2D
 
 var held_object: PhysicsBody2D = null
 var blockShapes = []
+var can_handle_inputs: bool = true
 
 
 func _ready():
@@ -10,11 +11,13 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("grab"):
-		handle_grab()
-	
-	if Input.is_action_just_released("grab"):
-		handle_release()
+	print("alive")
+	if can_handle_inputs:
+		if Input.is_action_just_pressed("grab"):
+			handle_grab()
+		
+		if Input.is_action_just_released("grab"):
+			handle_release()
 
 
 func _input(event):
@@ -48,3 +51,8 @@ func handle_release()-> void:
 		held_object.modulate = Color(1.0,1.0,1.0)
 		held_object.is_held = false
 		held_object = null
+
+
+func _on_end_game_timer_timeout():
+	handle_release()
+	can_handle_inputs = false
