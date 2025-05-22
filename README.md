@@ -1,3 +1,4 @@
+<img src="./stacking-spedup.gif" width="670" height="457" />
 # Grab N Stack
 [Grab n' stack co-op](https://myjeandev.itch.io/grab-n-stack-co-op)  
 A simple physics based Godot game I made in ~10 hours for my friends to play over the weekend in a tournament.  
