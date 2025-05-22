@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./READMEGameplay.gif" width="670" height="457" />  
+  <img alt="gif of gameplay" src="./READMEGameplay.gif" width="670" height="457" />  
 </p>
 <p align="center">
   <a href="https://myjeandev.itch.io/grab-n-stack-co-op">Grab n' stack co-op</p> 
